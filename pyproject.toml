@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hybrid-ngd"
+version = "0.1.0"
+description = "Natural gradient descent for torch and JAX with an optional Qiskit HHL linear solver"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+torch = ["torch>=2.0"]
+jax = ["jax>=0.4.30"]
+qiskit = ["qiskit>=1.0", "threadpoolctl>=3"]
+aer = ["qiskit>=1.0", "qiskit-aer>=0.15"]
+ibm = ["qiskit>=1.0", "qiskit-aer>=0.15", "qiskit-ibm-runtime>=0.30"]
+notebook = ["torch>=2.0", "qiskit>=1.0", "matplotlib", "jupyter"]
+test = ["pytest", "torch>=2.0", "jax>=0.4.30", "qiskit>=1.0", "qiskit-aer>=0.15"]
+
+[tool.setuptools]
+packages = ["hybrid_ngd", "hybrid_ngd.solvers"]

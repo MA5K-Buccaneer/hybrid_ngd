@@ -1,0 +1,11 @@
+# Environments and build artefacts
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Tool caches
+.pytest_cache/
+.ipynb_checkpoints/
